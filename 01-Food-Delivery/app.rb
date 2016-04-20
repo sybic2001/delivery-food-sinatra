@@ -2,6 +2,7 @@
 # Then you can test your program with:
 #    $ ruby app.rb
 #    coucou
+#    coucou 3
 
 require_relative 'app/models/meal'
 require_relative 'app/models/customer'
