@@ -1,0 +1,14 @@
+id,customer_id,meal_id,employee_id,status
+0,39,47,1,delivered
+1,1,2,2,delivered
+2,0,1,2,delivered
+3,0,1,0,delivered
+4,39,47,0,undelivered
+5,0,1,2,delivered
+6,39,1,1,undelivered
+9,0,1,0,undelivered
+10,1,10,1,undelivered
+11,0,1,0,undelivered
+12,45,55,2,undelivered
+13,44,10,1,delivered
+14

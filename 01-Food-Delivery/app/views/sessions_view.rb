@@ -1,0 +1,5 @@
+class SessionsView
+
+
+
+end

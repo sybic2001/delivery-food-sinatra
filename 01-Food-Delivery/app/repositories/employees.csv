@@ -1,0 +1,4 @@
+id,name,manager,login,pwd
+0,Jean,true,jj,2015
+1,Charlotte,false,chacha,2014
+2,Philippe,false,phi,2014

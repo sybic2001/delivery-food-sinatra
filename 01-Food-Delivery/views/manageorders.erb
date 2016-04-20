@@ -1,0 +1,26 @@
+<h1>Gérer les commandes</h1>
+<form action="/indexmanager/<%=@login%>/manageorders/markdelivered" method="post">
+  <% @orders_undelivered.each_with_index do |order, index| %>
+    <p><%= index + 1 %>. <strong><%= order.employee.name %></strong> doit livrer <strong><%= order.meal.name %></strong> pour <strong><%=order.customer.name%></strong></p>
+  <% end %>
+</form>
+<br>
+<form action="/indexmanager/<%=@login%>/manageorders/add" method="post">
+  <p>Client :  <select name="customer">
+    <% @customers.each_with_index do |customer, index| %>
+    <option value="<%= customer.id %>"><%= customer.name %></option>
+    <% end %>
+  </select>
+  Repas :  <select name="meal">
+    <% @meals.each_with_index do |meal, index| %>
+    <option value="<%= meal.id %>"><%= meal.name %></option>
+    <% end %>
+  </select>
+  Livreur :  <select name="employee">
+    <% @employees.each_with_index do |employee, index| %>
+    <option value="<%= employee.id %>"><%= employee.name %>, <%= employee.manager ? "Manager" : "Delivery" %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Ajouter la commande"></p>
+</form>
+<p><a href="/indexmanager/<%=@login%>">Revenir au menu principal</a> - <a href="/">Log out</a></p>

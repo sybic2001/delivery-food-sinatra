@@ -1,0 +1,7 @@
+<h1>Connecte toi avec ton login et ton password</h1>
+<form action="/signin" method="post">
+  <p><input type="text" name="item[]" id="login">
+  <input type="password" name="item[]" id="pwd">
+  <input type="submit" name="Validate" value="Sign in"></p>
+  <p><%= @error ? "Identifiant ou mot de passe incorrect" : "" %></p>
+</form>

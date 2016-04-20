@@ -1,0 +1,10 @@
+<h1>Les commandes de <%= @login %></h1>
+<form action="/indexdelivery/<%=@login%>/deliverorders/markdelivered" method="post">
+  <% @orders_undelivered.each_with_index do |order, index| %>
+    <p><input type="radio" name="<%=order.id%>" id="<%=order.id%>"><label for="<%=order.id%>" style="cursor: pointer">&nbsp; <%= index + 1 %>. <strong><%= order.employee.name %></strong> doit livrer <strong><%= order.meal.name %></strong> pour <strong><%=order.customer.name%></strong></label></p>
+  <% end %>
+  <input type="submit" value="Marquer la commande comme livrée">
+</form>
+<br>
+
+<p><a href="/indexdelivery/<%=@login%>/deliverorders">Revenir au menu principal</a> - <a href="/">Log out</a></p>

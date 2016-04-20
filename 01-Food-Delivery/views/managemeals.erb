@@ -1,0 +1,14 @@
+<h1>Gérer les repas</h1>
+<form action="/indexmanager/<%=@login%>/managemeals/delete" method="post">
+  <% @meals.each_with_index do |meal, index| %>
+    <p><input type="radio" name="<%=meal.id%>" id="<%=meal.id%>" <%= @orders.select { |order| order.meal.id == meal.id }.empty? ? "" : "disabled" %>><label for="<%=meal.id%>" style="cursor: pointer">&nbsp; <%= index + 1 %>. <%=meal.name%> - <%=meal.price%>€</label></p>
+  <% end %>
+  <input type="submit" value="Supprimer le repas selectionné">
+</form>
+<br>
+<form action="/indexmanager/<%=@login%>/managemeals/add" method="post">
+  <p>Name : <input type="text" name="name" id="name">
+  Price : <input type="text" name="price" id="price">
+  <input type="submit" value="Ajouter le repas"></p>
+</form>
+<p><a href="/indexmanager/<%=@login%>">Revenir au menu principal</a> - <a href="/">Log out</a></p>

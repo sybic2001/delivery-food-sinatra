@@ -1,0 +1,14 @@
+<h1>Gérer les clients</h1>
+<form action="/indexmanager/<%=@login%>/managecustomers/delete" method="post">
+  <% @customers.each_with_index do |customer, index| %>
+    <p><input type="radio" name="<%=customer.id%>" id="<%=customer.id%>" <%= @orders.select { |order| order.customer.id == customer.id }.empty? ? "" : "disabled" %>><label for="<%=customer.id%>" style="cursor: pointer">&nbsp;<%= index + 1 %>. <%=customer.name%> - <%=customer.address%></label></p>
+  <% end %>
+  <input type="submit" value="Supprimer le client selectionné">
+</form>
+<br>
+<form action="/indexmanager/<%=@login%>/managecustomers/add" method="post">
+  <p>Name : <input type="text" name="name" id="name">
+  Address : <input type="text" name="address" id="address">
+  <input type="submit" value="Ajouter le client"></p>
+</form>
+<p><a href="/indexmanager/<%=@login%>">Revenir au menu principal</a> - <a href="/">Log out</a></p>
